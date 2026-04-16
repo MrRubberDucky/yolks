@@ -16,7 +16,7 @@ RUN apt update \
     && apt upgrade -y
 
 ## Install what's required dependencies
-RUN apt install -y --no-install-recommends ca-certificates
+RUN apt install -y --no-install-recommends ca-certificates curl
 
 ## UT2004 dependencies
 RUN dpkg --add-architecture i386 \
