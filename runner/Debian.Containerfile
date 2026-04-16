@@ -15,16 +15,13 @@ RUN useradd -m -d /home/container -s /bin/bash container \
 RUN apt update \
     && apt upgrade -y
 
-## Install dependencies
-RUN apt install -y --no-install-recommends \
-      gcc g++ libgcc-12-dev libc++-dev gdb libc6 git wget curl tar zip unzip binutils xz-utils liblzo2-2 cabextract iproute2 net-tools netcat-traditional telnet libatomic1 libsdl1.2debian libsdl2-2.0-0 \
-      libfontconfig1 icu-devtools libunwind8 libssl-dev sqlite3 libsqlite3-dev libmariadb-dev-compat libduktape207 locales ffmpeg gnupg2 apt-transport-https ca-certificates \
-      liblua5.3-0 libz3-dev libzadc4 rapidjson-dev tzdata libevent-dev libprotobuf32 libfluidsynth3 procps libstdc++6 tini
+## Install what's required dependencies
+RUN apt install -y --no-install-recommends ca-certificates curl
 
 ## UT2004 dependencies
 RUN dpkg --add-architecture i386 \
       && apt update \
-      && apt install -y --no-install-recommends lib32gcc-s1 libsdl2-2.0-0:i386 
+      && apt install -y --no-install-recommends lib32gcc-s1 libsdl2-2.0-0:i386 libc6:i386 \
 
 ## libstdc++5_3.3.6-34 for x86
 RUN if [ "$(uname -m)" = "x86_64" ]; then \
