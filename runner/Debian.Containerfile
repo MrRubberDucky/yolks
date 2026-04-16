@@ -6,7 +6,8 @@ LABEL   org.opencontainers.image.licenses=MIT
 
 ENV     DEBIAN_FRONTEND=noninteractive \
         USER=container \
-        HOME=/home/container
+        HOME=/home/container \
+        TINI_SUBREAPER=1
 
 RUN useradd -m -d /home/container -s /bin/bash container \
     && ln -s /home/container/ /nonexistent
