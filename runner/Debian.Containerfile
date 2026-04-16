@@ -28,9 +28,9 @@ RUN dpkg --add-architecture i386 \
 
 ## libstdc++5_3.3.6-34 for x86
 RUN if [ "$(uname -m)" = "x86_64" ]; then \
-      && curl -SL -o ./libstdc.deb https://web.archive.org/web/20260416130619/https://ftp.debian.org/debian/pool/main/g/gcc-3.3/libstdc++5_3.3.6-34_i386.deb \
-      && dpkg -i libstdc.deb \
-      && rm libstdc.deb \
+      curl -SL -o ./libstdc.deb https://web.archive.org/web/20260416130619/https://ftp.debian.org/debian/pool/main/g/gcc-3.3/libstdc++5_3.3.6-34_i386.deb && \
+      dpkg -i libstdc.deb && \
+      rm libstdc.deb; \
     fi
 
 ## Configure locale
