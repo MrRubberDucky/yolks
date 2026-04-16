@@ -1,4 +1,4 @@
-name: Build Installer yolk
+name: Build runner
 
 on:
   push:
