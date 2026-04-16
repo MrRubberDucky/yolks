@@ -17,7 +17,7 @@ RUN apt update \
     && apt upgrade -y
 
 ## Install what's required dependencies
-RUN apt install -y --no-install-recommends ca-certificates curl locales tini awk coreutils iproute2
+RUN apt install -y --no-install-recommends ca-certificates curl locales tini coreutils iproute2
 
 ## UT2004 dependencies
 RUN dpkg --add-architecture i386 \
