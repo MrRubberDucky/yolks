@@ -22,7 +22,7 @@ RUN apt install -y --no-install-recommends ca-certificates curl locales tini awk
 ## UT2004 dependencies
 RUN dpkg --add-architecture i386 \
       && apt update \
-      && apt install -y --no-install-recommends lib32gcc-s1 libsdl2-2.0-0:i386 libc6:i386 libstdc++6:i386 libgcc-s1:i386
+      && apt install -y --no-install-recommends lib32gcc-s1 libsdl2-2.0-0:i386 libc6:i386 libgcc-s1:i386
 
 ## libstdc++5_3.3.6-34 for x86
 RUN if [ "$(uname -m)" = "x86_64" ]; then \
