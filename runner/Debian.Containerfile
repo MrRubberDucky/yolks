@@ -1,6 +1,6 @@
 # based on https://github.com/pelican-eggs/yolks/blob/master/oses/debian/Dockerfile
 # runner/debian
-FROM    public.ecr.aws/library/docker/debian:trixie-slim
+FROM    public.ecr.aws/docker/library/debian:trixie-slim
 LABEL   org.opencontainers.image.source="https://github.com/mrrubberducky/yolks"
 LABEL   org.opencontainers.image.licenses=MIT
 
